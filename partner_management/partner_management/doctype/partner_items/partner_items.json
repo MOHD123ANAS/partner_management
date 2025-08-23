@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-21 20:05:28.238091",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_cwab",
+  "amended_from",
+  "partner_name",
+  "partners_name",
+  "item_name",
+  "uom",
+  "rejection_reason",
+  "column_break_efkj",
+  "item_category",
+  "item_price",
+  "hsn_code",
+  "naming_series",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_cwab",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Partner Items",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "partner_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Partner ID",
+   "options": "Partner Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "label": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_category",
+   "fieldtype": "Data",
+   "label": "Item Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_price",
+   "fieldtype": "Currency",
+   "label": "Item Price",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hsn_code",
+   "fieldtype": "Data",
+   "label": "HSN Code",
+   "length": 6,
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fetch_from": "partner_name.partner_name",
+   "fieldname": "partners_name",
+   "fieldtype": "Data",
+   "label": "Partner Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_efkj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nAccepted\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Item",
+   "link_fieldname": "name"
+  }
+ ],
+ "modified": "2025-08-22 02:23:49.901709",
+ "modified_by": "Administrator",
+ "module": "Partner Management",
+ "name": "Partner Items",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Accepted"
+  },
+  {
+   "color": "Yellow",
+   "title": "Pending"
+  },
+  {
+   "color": "Red",
+   "title": "Rejected"
+  }
+ ]
+}

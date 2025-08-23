@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:partner_business_name",
+ "creation": "2025-08-22 17:16:26.911659",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partner_name",
+  "partner_business_name",
+  "gst_number",
+  "business_established_date",
+  "explain_about_your_business",
+  "status",
+  "column_break_jbdb",
+  "pincode",
+  "city",
+  "state",
+  "country",
+  "full_address",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Partner Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "partner_business_name",
+   "fieldtype": "Data",
+   "label": "Partner Business Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_established_date",
+   "fieldtype": "Date",
+   "label": "Business Established Date"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Small Text",
+   "label": "Full Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jbdb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "explain_about_your_business",
+   "fieldtype": "Small Text",
+   "label": "Explain About Your Business"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Partners List",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Partner Details",
+   "link_fieldname": "business_name"
+  }
+ ],
+ "modified": "2025-08-22 19:03:09.988554",
+ "modified_by": "Administrator",
+ "module": "Partner Management",
+ "name": "Partners List",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
