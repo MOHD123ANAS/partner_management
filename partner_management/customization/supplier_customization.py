@@ -39,15 +39,10 @@ def create_custom_fields():
     for doctype, fields in custom_fields.items():
         for field in fields:
             if not frappe.db.exists("Custom Field", {"dt": doctype, "fieldname": field["fieldname"]}):
-                try:
-                    create_custom_field(doctype, field)
-                except Exception as e:
-                    frappe.log_error(
-                        title="Custom Field Creation Failed",
-                        message=f"{doctype}: {field['fieldname']} - {e}"
-                    )
-
-    frappe.db.commit()
+                create_custom_field(doctype, field)
+                
+                frappe.db.commit()
+                frappe.clear_cache(doctype=doctype)
 
 
 def delete_custom_fields():
@@ -59,12 +54,6 @@ def delete_custom_fields():
     for doctype, fields in custom_fields_to_delete.items():
         for field_name in fields:
             if frappe.db.exists("Custom Field", {"dt": doctype, "fieldname": field_name}):
-                try:
-                    frappe.delete_doc("Custom Field", f"{doctype}-{field_name}", ignore_missing=True)
-                except Exception as e:
-                    frappe.log_error(
-                        title="Custom Field Deletion Failed",
-                        message=f"{doctype}-{field_name} - {e}"
-                    )
-
-    frappe.db.commit()
+                frappe.delete_doc("Custom Field", f"{doctype}-{field_name}", ignore_missing=True)
+                frappe.db.commit()
+                frappe.clear_cache(doctype=doctype)
