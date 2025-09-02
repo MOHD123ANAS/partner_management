@@ -22,7 +22,7 @@ fixtures = [
 ]
 
 after_migrate = [
-    "partner_management.customization.custom_fields.create_custom_fields"
+    "partner_management.customization.supplier_customization.create_custom_fields"
 ]
 
 
