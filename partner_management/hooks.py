@@ -21,6 +21,9 @@ fixtures = [
     "Workflow Action Master"
 ]
 
+after_migrate = [
+    "partner_management.customization.custom_fields.create_custom_fields"
+]
 
 
 after_install = "partner_management.customization.supplier_customization.create_custom_fields"
