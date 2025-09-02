@@ -2,7 +2,6 @@ import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_field
 
 def create_custom_fields():
-    
     custom_fields = {
         "Supplier": [
             {
@@ -17,7 +16,7 @@ def create_custom_fields():
                 "fieldname": "partner_name",
                 "fieldtype": "Link",
                 "label": "Partner Name",
-                "insert_after": "is_partner",
+                "insert_after": "supplier_type",
                 "options": "Partner Details",
                 "in_list_view": 1,
                 "depends_on": "eval:doc.is_partner==1",
@@ -43,13 +42,15 @@ def create_custom_fields():
                 try:
                     create_custom_field(doctype, field)
                 except Exception as e:
-                    frappe.log_error(title="Custom Field Creation Failed", message=f"{doctype}: {field['fieldname']} - {e}")
+                    frappe.log_error(
+                        title="Custom Field Creation Failed",
+                        message=f"{doctype}: {field['fieldname']} - {e}"
+                    )
 
     frappe.db.commit()
 
 
 def delete_custom_fields():
-    
     custom_fields_to_delete = {
         "Supplier": ["is_partner", "partner_name"],
         "Address": ["is_partner"],
@@ -61,6 +62,9 @@ def delete_custom_fields():
                 try:
                     frappe.delete_doc("Custom Field", f"{doctype}-{field_name}", ignore_missing=True)
                 except Exception as e:
-                    frappe.log_error(title="Custom Field Deletion Failed", message=f"{doctype}-{field_name} - {e}")
+                    frappe.log_error(
+                        title="Custom Field Deletion Failed",
+                        message=f"{doctype}-{field_name} - {e}"
+                    )
 
     frappe.db.commit()
