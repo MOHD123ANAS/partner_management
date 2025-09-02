@@ -6,13 +6,23 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "partner_name",
   "gst_number",
   "address_html",
-  "naming_series",
+  "address_line_1",
+  "address_line_2",
+  "pincode",
+  "city",
+  "state",
+  "country",
+  "column_break_zlut",
   "posting_date",
   "business_name",
-  "partner_list_id"
+  "partner_list_id",
+  "supplier",
+  "contact_number",
+  "contact_email"
  ],
  "fields": [
   {
@@ -54,6 +64,63 @@
    "fieldname": "partner_list_id",
    "fieldtype": "Read Only",
    "label": "Partner List Id"
+  },
+  {
+   "fieldname": "column_break_zlut",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier ",
+   "link_filters": "[[\"Supplier\",\"is_partner\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode",
+   "length": 6,
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Phone",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email",
+   "options": "email"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
   }
  ],
  "grid_page_length": 50,
@@ -62,9 +129,13 @@
   {
    "link_doctype": "Partner Items",
    "link_fieldname": "partner_name"
+  },
+  {
+   "link_doctype": "Supplier",
+   "link_fieldname": "partner_name"
   }
  ],
- "modified": "2025-08-22 18:47:47.085401",
+ "modified": "2025-09-02 13:01:06.057605",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Details",

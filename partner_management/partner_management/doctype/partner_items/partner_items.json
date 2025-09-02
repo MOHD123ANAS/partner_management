@@ -7,8 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_cwab",
-  "amended_from",
   "partner_name",
+  "amended_from",
   "partners_name",
   "item_name",
   "uom",
@@ -18,7 +18,8 @@
   "item_price",
   "hsn_code",
   "naming_series",
-  "status"
+  "status",
+  "supplier_id"
  ],
  "fields": [
   {
@@ -41,7 +42,8 @@
    "in_list_view": 1,
    "label": "Partner ID",
    "options": "Partner Details",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "item_name",
@@ -51,14 +53,16 @@
   },
   {
    "fieldname": "uom",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "UOM",
+   "options": "UOM",
    "reqd": 1
   },
   {
    "fieldname": "item_category",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Item Category",
+   "options": "Item Group",
    "reqd": 1
   },
   {
@@ -70,15 +74,17 @@
   },
   {
    "fieldname": "hsn_code",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "HSN Code",
    "length": 6,
+   "options": "GST HSN Code",
    "reqd": 1
   },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Series"
+   "label": "Series",
+   "options": ".{partner_name}.-.{item_name}.-.FY.-"
   },
   {
    "fetch_from": "partner_name.partner_name",
@@ -103,18 +109,20 @@
    "fieldtype": "Small Text",
    "label": "Rejection Reason",
    "read_only": 1
+  },
+  {
+   "fetch_from": "partner_name.supplier",
+   "fieldname": "supplier_id",
+   "fieldtype": "Data",
+   "label": "Supplier Id",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Item",
-   "link_fieldname": "name"
-  }
- ],
- "modified": "2025-08-22 02:23:49.901709",
+ "links": [],
+ "modified": "2025-09-02 14:58:14.036831",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Items",
@@ -131,6 +139,15 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Supplier",
+   "select": 1,
    "submit": 1,
    "write": 1
   }

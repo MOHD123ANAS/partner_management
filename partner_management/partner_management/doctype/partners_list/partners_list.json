@@ -12,12 +12,15 @@
   "business_established_date",
   "explain_about_your_business",
   "status",
+  "contact_number",
+  "contact_email_id",
   "column_break_jbdb",
-  "pincode",
+  "address_line_1",
+  "address_line_2",
   "city",
+  "pincode",
   "state",
   "country",
-  "full_address",
   "amended_from"
  ],
  "fields": [
@@ -61,7 +64,8 @@
   {
    "fieldname": "state",
    "fieldtype": "Data",
-   "label": "State"
+   "label": "State",
+   "reqd": 1
   },
   {
    "fieldname": "country",
@@ -70,14 +74,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "full_address",
-   "fieldtype": "Small Text",
-   "label": "Full Address",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_jbdb",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "label": "Address"
   },
   {
    "fieldname": "explain_about_your_business",
@@ -99,6 +98,30 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Pending\nApproved\nRejected"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Phone",
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_email_id",
+   "fieldtype": "Data",
+   "label": "Contact Email Id",
+   "options": "email",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -110,7 +133,7 @@
    "link_fieldname": "business_name"
   }
  ],
- "modified": "2025-08-22 19:03:09.988554",
+ "modified": "2025-09-02 13:29:11.773206",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partners List",

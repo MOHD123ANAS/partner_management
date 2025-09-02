@@ -5,6 +5,27 @@ app_description = "Partner Management"
 app_email = "mohammedanas19025@gmail.com"
 app_license = "mit"
 
+doc_events = {
+    "Supplier": {
+        "autoname": "partner_management.customization.supplier_mand.autoname"
+    },
+    "Sales Order":{
+        "on_submit":"partner_management.customization.purchase.create_po_and_pi_for_supplier",
+        "on_update":"partner_management.customization.sales_order_notify.notify_supplier_on_draft"
+    }
+}
+
+fixtures = [
+    "Workflow",
+    "Workflow State",
+    "Workflow Action Master"
+]
+
+
+
+after_install = "partner_management.customization.supplier_customization.create_custom_fields"
+before_uninstall = "partner_management.customization.supplier_customization.delete_custom_fields"
+
 # Apps
 # ------------------
 
