@@ -4,7 +4,6 @@
 frappe.ui.form.on("Partner Items", {
     refresh: function(frm) {
         if (frm.doc.docstatus === 1 && frm.doc.status === "Pending") {
-            
             frm.add_custom_button(__('Approve'), function() {
                 frappe.call({
                     method: "partner_management.partner_management.doctype.partner_items.partner_items.approve_item",
@@ -47,8 +46,26 @@ frappe.ui.form.on("Partner Items", {
                     __("Reject")
                 );
             }, __("Actions"));
-            
         }
+    },
+
+    item_category: function(frm) {
+        frm.set_query("item_id", function() {
+            if (!frm.doc.item_category) {
+                return {
+                    filters: {
+                        name: "" 
+                    }
+                };
+            }
+            return {
+                filters: {
+                    "item_group": frm.doc.item_category
+                }
+            };
+        });
+
+        
+        frm.set_value("item_id", null);
     }
 });
-

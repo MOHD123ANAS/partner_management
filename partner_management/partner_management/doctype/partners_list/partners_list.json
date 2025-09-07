@@ -21,7 +21,8 @@
   "pincode",
   "state",
   "country",
-  "amended_from"
+  "amended_from",
+  "gst_detailspdf_format"
  ],
  "fields": [
   {
@@ -122,6 +123,12 @@
    "label": "Contact Email Id",
    "options": "email",
    "reqd": 1
+  },
+  {
+   "fieldname": "gst_detailspdf_format",
+   "fieldtype": "Attach",
+   "label": "GST Details(PDF Format)",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
@@ -133,7 +140,7 @@
    "link_fieldname": "business_name"
   }
  ],
- "modified": "2025-09-02 13:29:11.773206",
+ "modified": "2025-09-07 21:46:28.963720",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partners List",

@@ -23,7 +23,16 @@ frappe.ui.form.on("Partner Details", {
                         }
                     }
                 });
-            }, __("Actions"));
+            },
+             __("Actions"));
+        }
+
+    },
+    refresh: function(frm) {
+        if (frm.doc.supplier) {
+            frm.add_custom_button(__('View Supplier'), function() {
+                frappe.set_route('Form', 'Supplier', frm.doc.supplier);
+            }, __('Actions'));
         }
     }
 });

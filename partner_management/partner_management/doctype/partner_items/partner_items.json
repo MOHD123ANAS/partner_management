@@ -10,11 +10,12 @@
   "partner_name",
   "amended_from",
   "partners_name",
+  "item_category",
+  "item_id",
   "item_name",
   "uom",
   "rejection_reason",
   "column_break_efkj",
-  "item_category",
   "item_price",
   "hsn_code",
   "naming_series",
@@ -46,17 +47,17 @@
    "search_index": 1
   },
   {
+   "fetch_from": "item_id.item_name",
    "fieldname": "item_name",
-   "fieldtype": "Data",
+   "fieldtype": "Read Only",
    "label": "Item Name",
-   "reqd": 1
+   "options": "Item"
   },
   {
+   "fetch_from": "item_id.stock_uom",
    "fieldname": "uom",
-   "fieldtype": "Link",
-   "label": "UOM",
-   "options": "UOM",
-   "reqd": 1
+   "fieldtype": "Read Only",
+   "label": "UOM"
   },
   {
    "fieldname": "item_category",
@@ -73,12 +74,10 @@
    "reqd": 1
   },
   {
+   "fetch_from": "item_id.gst_hsn_code",
    "fieldname": "hsn_code",
-   "fieldtype": "Link",
-   "label": "HSN Code",
-   "length": 6,
-   "options": "GST HSN Code",
-   "reqd": 1
+   "fieldtype": "Read Only",
+   "label": "HSN Code"
   },
   {
    "fieldname": "naming_series",
@@ -116,13 +115,20 @@
    "fieldtype": "Data",
    "label": "Supplier Id",
    "read_only": 1
+  },
+  {
+   "fieldname": "item_id",
+   "fieldtype": "Link",
+   "label": "Item ID",
+   "options": "Item",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-02 14:58:14.036831",
+ "modified": "2025-09-07 22:14:25.499640",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Items",
