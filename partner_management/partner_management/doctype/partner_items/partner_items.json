@@ -60,11 +60,11 @@
    "label": "UOM"
   },
   {
+   "fetch_from": "item_id.item_group",
    "fieldname": "item_category",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Item Category",
-   "options": "Item Group",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "item_price",
@@ -128,7 +128,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 22:14:25.499640",
+ "modified": "2025-09-08 10:34:00.181315",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Items",

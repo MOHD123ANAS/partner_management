@@ -49,23 +49,23 @@ frappe.ui.form.on("Partner Items", {
         }
     },
 
-    item_category: function(frm) {
-        frm.set_query("item_id", function() {
-            if (!frm.doc.item_category) {
-                return {
-                    filters: {
-                        name: "" 
-                    }
-                };
-            }
-            return {
-                filters: {
-                    "item_group": frm.doc.item_category
-                }
-            };
-        });
+    // item_category: function(frm) {
+    //     frm.set_query("item_id", function() {
+    //         if (!frm.doc.item_category) {
+    //             return {
+    //                 filters: {
+    //                     name: "" 
+    //                 }
+    //             };
+    //         }
+    //         return {
+    //             filters: {
+    //                 "item_group": frm.doc.item_category
+    //             }
+    //         };
+    //     });
 
         
-        frm.set_value("item_id", null);
-    }
+    //     frm.set_value("item_id", null);
+    // }
 });
