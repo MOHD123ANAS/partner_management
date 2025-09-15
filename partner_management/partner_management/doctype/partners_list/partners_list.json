@@ -22,7 +22,9 @@
   "state",
   "country",
   "amended_from",
-  "gst_detailspdf_format"
+  "gst_detailspdf_format",
+  "referred_by_agent",
+  "agent_id"
  ],
  "fields": [
   {
@@ -129,6 +131,19 @@
    "fieldtype": "Attach",
    "label": "GST Details(PDF Format)",
    "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.referred_by_agent",
+   "fieldname": "agent_id",
+   "fieldtype": "Data",
+   "label": "Agent Id",
+   "mandatory_depends_on": "eval:doc.referred_by_agent"
+  },
+  {
+   "default": "0",
+   "fieldname": "referred_by_agent",
+   "fieldtype": "Check",
+   "label": "Referred By Agent?"
   }
  ],
  "grid_page_length": 50,
@@ -140,7 +155,7 @@
    "link_fieldname": "business_name"
   }
  ],
- "modified": "2025-09-07 21:46:28.963720",
+ "modified": "2025-09-14 01:04:02.555221",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partners List",
