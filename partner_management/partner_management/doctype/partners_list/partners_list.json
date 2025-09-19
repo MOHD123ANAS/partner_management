@@ -135,9 +135,10 @@
   {
    "depends_on": "eval:doc.referred_by_agent",
    "fieldname": "agent_id",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Agent Id",
-   "mandatory_depends_on": "eval:doc.referred_by_agent"
+   "mandatory_depends_on": "eval:doc.referred_by_agent",
+   "options": "Sales Partner"
   },
   {
    "default": "0",
@@ -155,7 +156,7 @@
    "link_fieldname": "business_name"
   }
  ],
- "modified": "2025-09-14 01:04:02.555221",
+ "modified": "2025-09-19 15:07:41.261630",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partners List",

@@ -48,7 +48,8 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "Series"
+   "label": "Series",
+   "options": "Supplier-Partner-.business_name.-"
   },
   {
    "fieldname": "posting_date",
@@ -135,7 +136,7 @@
    "link_fieldname": "partner_name"
   }
  ],
- "modified": "2025-09-02 13:01:06.057605",
+ "modified": "2025-09-19 15:23:05.075428",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Details",

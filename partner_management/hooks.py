@@ -30,7 +30,8 @@ doc_events = {
 
 after_migrate = [
     "partner_management.customization.supplier_customization.create_custom_fields",
-    "partner_management.customization.supplier_customization.delete_custom_fields"
+    "partner_management.customization.customer_customisation.disable_customer_name_mandatory"
+   
     
 ]
 
