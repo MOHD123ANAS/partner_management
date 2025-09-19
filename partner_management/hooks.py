@@ -22,11 +22,11 @@ fixtures = [
     "Workflow State",
     "Workflow Action Master"
 ]
-doc_events = {
-    "Sales Partner": {
-        "before_insert": "agent_management.customization.sales_partner_customization.set_sales_partner_name"
-    }
-}
+# doc_events = {
+#     "Sales Partner": {
+#         "before_insert": "agent_management.customization.sales_partner_customization.set_sales_partner_name"
+#     }
+# }
 
 after_migrate = [
     "partner_management.customization.supplier_customization.create_custom_fields",
