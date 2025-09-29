@@ -10,5 +10,5 @@ def autoname(doc, method):
         
         safe_partner = re.sub(r'[^A-Za-z0-9-]+', '', doc.partner_name).upper()
         
-        doc.name = make_autoname(f"SUP-{safe_partner}-.######")
+        doc.name = make_autoname(f"SUP-{safe_partner}-.####")
     

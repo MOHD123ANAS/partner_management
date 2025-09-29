@@ -22,7 +22,9 @@
   "partner_list_id",
   "supplier",
   "contact_number",
-  "contact_email"
+  "contact_email",
+  "sales_agent_refferal",
+  "abbr"
  ],
  "fields": [
   {
@@ -49,7 +51,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "Supplier-Partner-.business_name.-"
+   "options": "SUPOB.-.abbr.-"
   },
   {
    "fieldname": "posting_date",
@@ -122,6 +124,16 @@
    "fieldname": "city",
    "fieldtype": "Data",
    "label": "City"
+  },
+  {
+   "fieldname": "sales_agent_refferal",
+   "fieldtype": "Data",
+   "label": "Sales Agent Refferal"
+  },
+  {
+   "fieldname": "abbr",
+   "fieldtype": "Read Only",
+   "label": "Abbr"
   }
  ],
  "grid_page_length": 50,
@@ -136,7 +148,7 @@
    "link_fieldname": "partner_name"
   }
  ],
- "modified": "2025-09-19 15:23:05.075428",
+ "modified": "2025-09-29 17:04:33.430730",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partner Details",
