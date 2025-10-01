@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:partner_business_name",
  "creation": "2025-08-22 17:16:26.911659",
@@ -14,6 +15,7 @@
   "status",
   "contact_number",
   "contact_email_id",
+  "source",
   "column_break_jbdb",
   "address_line_1",
   "address_line_2",
@@ -22,17 +24,17 @@
   "state",
   "country",
   "amended_from",
-  "gst_detailspdf_format",
   "referred_by_agent",
-  "agent_id"
+  "agent_id",
+  "reason_for_rejecting",
+  "gst_detailspdf_format"
  ],
  "fields": [
   {
    "fieldname": "partner_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Partner Name",
-   "reqd": 1
+   "label": "Partner Name"
   },
   {
    "fieldname": "partner_business_name",
@@ -44,8 +46,7 @@
   {
    "fieldname": "gst_number",
    "fieldtype": "Data",
-   "label": "GST Number",
-   "reqd": 1
+   "label": "GST Number"
   },
   {
    "fieldname": "business_established_date",
@@ -116,21 +117,13 @@
   {
    "fieldname": "contact_number",
    "fieldtype": "Phone",
-   "label": "Contact Number",
-   "reqd": 1
+   "label": "Contact Number"
   },
   {
    "fieldname": "contact_email_id",
    "fieldtype": "Data",
    "label": "Contact Email Id",
-   "options": "email",
-   "reqd": 1
-  },
-  {
-   "fieldname": "gst_detailspdf_format",
-   "fieldtype": "Attach",
-   "label": "GST Details(PDF Format)",
-   "reqd": 1
+   "options": "email"
   },
   {
    "depends_on": "eval:doc.referred_by_agent",
@@ -145,6 +138,24 @@
    "fieldname": "referred_by_agent",
    "fieldtype": "Check",
    "label": "Referred By Agent?"
+  },
+  {
+   "depends_on": "eval:doc.status == 'Rejected';",
+   "fieldname": "reason_for_rejecting",
+   "fieldtype": "Small Text",
+   "label": "Reason For Rejecting",
+   "mandatory_depends_on": "eval:doc.status == 'Rejected';"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "label": "Source",
+   "options": "Lead Source"
+  },
+  {
+   "fieldname": "gst_detailspdf_format",
+   "fieldtype": "Attach",
+   "label": "GST Attachment"
   }
  ],
  "grid_page_length": 50,
@@ -156,7 +167,7 @@
    "link_fieldname": "business_name"
   }
  ],
- "modified": "2025-09-19 15:07:41.261630",
+ "modified": "2025-10-01 15:06:07.990514",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Partners List",

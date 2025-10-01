@@ -9,6 +9,17 @@ class PartnersList(Document):
     def before_submit(self):
         if self.status not in ["Approved", "Rejected"]:
             frappe.throw("You can only submit if the status is 'Approved' or 'Rejected'.")
+        if self.status == "Approved":
+            if not self.partner_name:
+                frappe.throw("Enter Partner Name")
+            if not self.gst_number:
+                frappe.throw("Enter GST Number")
+            if not self.contact_number:
+                frappe.throw("Enter Contact Number")
+            if not self.contact_email_id:
+                frappe.throw("Enter Email")
+            if not self.gst_detailspdf_format: 
+                frappe.throw('Attach GST File')
 
     def on_submit(self):
         if self.status == "Approved":
