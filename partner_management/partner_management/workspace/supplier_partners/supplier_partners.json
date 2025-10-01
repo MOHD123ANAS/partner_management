@@ -1,22 +1,22 @@
 {
  "charts": [],
- "content": "[{\"id\":\"8wWqpXa8SU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Partner Portal</span>\",\"col\":12}},{\"id\":\"98zq3oo6EX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Details\",\"col\":3}},{\"id\":\"qVbriWPj3V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Items\",\"col\":3}},{\"id\":\"N1ITnU8cDu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner List\",\"col\":3}}]",
+ "content": "[{\"id\":\"8wWqpXa8SU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Supplier Partners - Dashboard</span>\",\"col\":12}},{\"id\":\"mns8GX7jtw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"98zq3oo6EX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Details\",\"col\":3}},{\"id\":\"qVbriWPj3V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Items\",\"col\":3}},{\"id\":\"N1ITnU8cDu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner List\",\"col\":3}}]",
  "creation": "2025-08-22 02:07:23.139919",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "add-round",
+ "icon": "tag",
  "idx": 1,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "Supplier Partner Portal",
+ "label": "Supplier Partners",
  "links": [],
- "modified": "2025-09-14 01:02:04.728143",
+ "modified": "2025-10-01 10:16:06.434516",
  "modified_by": "Administrator",
  "module": "Partner Management",
- "name": "Supplier Partner Portal",
+ "name": "Supplier Partners",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -34,7 +34,7 @@
    "doc_view": "List",
    "label": "Supplier Partner Details",
    "link_to": "Partner Details",
-   "stats_filter": "[[\"Partner Details\",\"naming_series\",\"=\",\"PTD.YY.-\",false]]",
+   "stats_filter": "[]",
    "type": "DocType"
   },
   {
@@ -54,5 +54,5 @@
    "type": "DocType"
   }
  ],
- "title": "Supplier Partner Portal"
+ "title": "Supplier Partners"
 }
