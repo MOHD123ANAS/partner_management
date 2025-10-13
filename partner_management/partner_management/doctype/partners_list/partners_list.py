@@ -3,7 +3,6 @@
 
 import frappe
 from frappe.model.document import Document
-import base64
 
 class PartnersList(Document):
     def before_submit(self):
@@ -45,20 +44,4 @@ class PartnersList(Document):
             partner_doc.insert(ignore_permissions=True)
 
             
-            if getattr(self, "gst_detailspdf_format", None):
-                try:
-                    file_content = base64.b64decode(self.gst_detailspdf_format)
-
-                    
-                    file_doc = frappe.get_doc({
-                        "doctype": "File",
-                        "file_name": f"{self.partner_name}_GST.pdf",
-                        "attached_to_doctype": "Partner Details",
-                        "attached_to_name": partner_doc.name,
-                        "is_private": 1,
-                        "content": file_content
-                    })
-                    file_doc.insert(ignore_permissions=True)
-                except Exception as e:
-                    frappe.log_error(frappe.get_traceback(), f"Failed to save GST PDF for {self.name}")
 
