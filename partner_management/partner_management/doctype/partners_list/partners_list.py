@@ -11,8 +11,6 @@ class PartnersList(Document):
         if self.status == "Approved":
             if not self.partner_name:
                 frappe.throw("Enter Partner Name")
-            if not self.gst_number:
-                frappe.throw("Enter GST Number")
             if not self.contact_number:
                 frappe.throw("Enter Contact Number")
             if not self.contact_email_id:

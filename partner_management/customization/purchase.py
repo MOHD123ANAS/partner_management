@@ -27,7 +27,7 @@ def create_po_and_pi_for_supplier(doc, method):
             po.append("items", {
                 "item_code": so_item.item_code,
                 "qty": so_item.qty,
-                "rate": so_item.rate,  # or you can fetch supplier rate
+                "rate": so_item.rate,  
                 "sales_order": doc.name,
                 "so_detail": so_item.name
             })

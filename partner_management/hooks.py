@@ -12,6 +12,9 @@ doc_events = {
     "Sales Order":{
         "on_submit":"partner_management.customization.purchase.create_po_and_pi_for_supplier",
         "on_update":"partner_management.customization.sales_order_notify.notify_supplier_on_draft"
+    },
+    "Sales Invoice":{
+        "on_update_after_submit":"partner_management.customization.delivery_note_create.create_delivery_note_from_sales_invoice"
     }
 }
 
