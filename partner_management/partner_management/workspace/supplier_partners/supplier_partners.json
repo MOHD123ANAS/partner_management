@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"8wWqpXa8SU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Supplier Partners - Dashboard</span>\",\"col\":12}},{\"id\":\"mns8GX7jtw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"98zq3oo6EX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Details\",\"col\":3}},{\"id\":\"qVbriWPj3V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Items\",\"col\":3}},{\"id\":\"N1ITnU8cDu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner List\",\"col\":3}}]",
+ "content": "[{\"id\":\"8wWqpXa8SU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Supplier Partners - Dashboard</span>\",\"col\":12}},{\"id\":\"mns8GX7jtw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"98zq3oo6EX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Details\",\"col\":3}},{\"id\":\"qVbriWPj3V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner Items\",\"col\":3}},{\"id\":\"N1ITnU8cDu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier Partner List\",\"col\":3}},{\"id\":\"pENEDxPsHk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"id\":\"78Yc0_iGpe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}}]",
  "creation": "2025-08-22 02:07:23.139919",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Supplier Partners",
  "links": [],
- "modified": "2025-10-01 10:16:06.434516",
+ "modified": "2025-10-22 20:25:22.062766",
  "modified_by": "Administrator",
  "module": "Partner Management",
  "name": "Supplier Partners",
@@ -40,9 +40,25 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Sales Order",
+   "link_to": "Sales Order",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Supplier Partner Items",
    "link_to": "Partner Items",
    "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "stats_filter": "[[\"Sales Invoice\",\"workflow_state\",\"=\",\"Pending\",false]]",
    "type": "DocType"
   },
   {
