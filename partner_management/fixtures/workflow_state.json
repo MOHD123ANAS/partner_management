@@ -30,27 +30,27 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-09-02 00:41:28.085599",
+  "modified": "2025-10-30 18:33:30.861961",
   "name": "Processing",
-  "style": "",
+  "style": "Primary",
   "workflow_state_name": "Processing"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-09-02 00:41:52.188285",
+  "modified": "2025-10-30 18:33:03.065068",
   "name": "Out For Delivery",
-  "style": "",
+  "style": "Info",
   "workflow_state_name": "Out For Delivery"
  },
  {
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-09-02 00:42:17.430774",
+  "modified": "2025-10-30 18:33:09.711159",
   "name": "Delivered",
-  "style": "",
+  "style": "Success",
   "workflow_state_name": "Delivered"
  }
 ]

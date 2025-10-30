@@ -23,7 +23,11 @@ doc_events = {
 fixtures = [
     "Workflow",
     "Workflow State",
-    "Workflow Action Master"
+    "Workflow Action Master",
+     {
+        "doctype": "Role",
+        "filters": [["role_name", "in", ["Partner"]]]
+    }
 ]
 # doc_events = {
 #     "Sales Partner": {
